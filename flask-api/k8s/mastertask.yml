@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: mastertask
-          image: tahmid55/mastertask-python:latest
+          image: tahmid55/mastertask:latest
           ports:
             - containerPort: 5000
           imagePullPolicy: Always
