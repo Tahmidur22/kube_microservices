@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mastertask
+  labels:
+    app: mastertask
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mastertask
+  template:
+    metadata:
+      labels:
+        app: mastertask
+    spec:
+      containers:
+        - name: mastertask
+          image: tahmid55/mastertask-python:latest
+          ports:
+            - containerPort: 5000
+          imagePullPolicy: Always
