@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mastertask
+  name: flasktask
   labels:
-    app: mastertask
+    app: flasktask
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mastertask
+      app: flasktask
   template:
     metadata:
       labels:
-        app: mastertask
+        app: flasktask
     spec:
       containers:
         - name: mastertask
-          image: tahmid55/mastertask:latest
+          image: tahmid55/flask-docker-image:latest
           ports:
             - containerPort: 5000
           imagePullPolicy: Always
