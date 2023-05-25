@@ -13,18 +13,18 @@ Kubeadm Installation
 
 Both Master & Worker Node
 ```
-* sudo apt update -y
-* sudo apt install docker.io -y
+sudo su
+apt update -y
+apt install docker.io -y
 
-* sudo systemctl start docker
-* sudo systemctl enable docker
+systemctl start docker
+systemctl enable docker
 
-* sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
+curl -fsSL "https://packages.cloud.google.com/apt/doc/apt-key.gpg" | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/kubernetes-archive-keyring.gpg
+echo 'deb https://packages.cloud.google.com/apt kubernetes-xenial main' > /etc/apt/sources.list.d/kubernetes.list
 
-* echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
-
-* sudo apt update -y
-* sudo apt install kubeadm=1.20.0-00 kubectl=1.20.0-00 kubelet=1.20.0-00 -y
+apt update -y
+apt install kubeadm=1.20.0-00 kubectl=1.20.0-00 kubelet=1.20.0-00 -y
 
 ```
 

@@ -15,7 +15,7 @@ spec:
         app: flasktask
     spec:
       containers:
-        - name: mastertask
+        - name: flasktask
           image: tahmid55/flask-docker-image:latest
           ports:
             - containerPort: 5000
